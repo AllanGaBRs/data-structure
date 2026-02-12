@@ -1,7 +1,5 @@
 package com.allan.vetor;
 
-import java.util.Arrays;
-
 public class Vetor {
     private String[] elements;
     private int size;
@@ -36,6 +34,13 @@ public class Vetor {
             return true;
         }
         return false;
+    }
+
+    public String get(int index){
+        if(!(index >= 0 && index < this.size)){
+            throw new IllegalArgumentException("Invalid index");
+        }
+        return this.elements[index];
     }
 
     public int size(){
