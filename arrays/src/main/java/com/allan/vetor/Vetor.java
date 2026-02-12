@@ -1,5 +1,7 @@
 package com.allan.vetor;
 
+import java.util.Arrays;
+
 public class Vetor {
     private String[] elements;
     private int size;
@@ -34,5 +36,29 @@ public class Vetor {
             return true;
         }
         return false;
+    }
+
+    public int size(){
+        return this.size;
+    }
+
+    @Override
+    public String toString(){
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        for(int i = 0; i < this.size-1; i++){
+            sb.append(this.elements[i]);
+            sb.append(", ");
+        }
+
+        if(this.size > 0){
+            sb.append(this.elements[this.size-1]);
+        }
+
+        sb.append("]");
+
+        return sb.toString();
     }
 }
