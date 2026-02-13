@@ -2,15 +2,13 @@ package com.allan.vetor.test;
 
 import com.allan.vetor.Vetor;
 
-public class main03 {
+public class main05 {
     public static void main(String[] args) {
-
-        Vetor vetor = new Vetor(20);
+        Vetor vetor = new Vetor(10);
         vetor.adds("Elemento 1");
         vetor.adds("Elemento 2");
         vetor.adds("Elemento 3");
-        System.out.println(vetor.size());
-
-        System.out.println(vetor.toString());
+        System.out.println(vetor.get("Elemento 2"));
+        System.out.println(vetor.get("Elemento 0"));
     }
 }

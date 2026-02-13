@@ -43,6 +43,15 @@ public class Vetor {
         return this.elements[index];
     }
 
+    public int get(String element){
+        for(int i = 0; i < this.size; i++){
+            if(this.elements[i].equals(element)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public int size(){
         return this.size;
     }
