@@ -28,6 +28,7 @@ public class Vetor {
     }*/
 
     public boolean adds(String element) {
+        this.incrementCapacity();
         if(this.size < this.elements.length){
             this.elements[this.size] = element;
             this.size++;
@@ -41,12 +42,24 @@ public class Vetor {
             throw new IllegalArgumentException("Invalid index");
         }
 
+        this.incrementCapacity();
+
         for(int i = this.size-1; i >= index; i--){
            this.elements[i+1] = this.elements[i];
         }
 
         this.elements[index] = element;
         size++;
+    }
+
+    private void incrementCapacity(){
+        if(this.size == this.elements.length ){
+            String[] newElements = new String[this.elements.length * 2];
+            for(int i = 0; i < this.elements.length; i++){
+                newElements[i] = this.elements[i];
+            }
+            this.elements = newElements;
+        }
     }
 
     public String get(int index){
