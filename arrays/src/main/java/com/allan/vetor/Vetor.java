@@ -62,6 +62,16 @@ public class Vetor {
         }
     }
 
+    public void remove(int index){
+        if(!(index >= 0 && index < this.size)){
+            throw new IllegalArgumentException("Invalid index");
+        }
+        for(int i=index; i <this.size-1; i++){
+            this.elements[i] = this.elements[i+1];
+        }
+        this.size--;
+    }
+
     public String get(int index){
         if(!(index >= 0 && index < this.size)){
             throw new IllegalArgumentException("Invalid index");
