@@ -71,6 +71,13 @@ public class VetorList<T> {
         return -1;
     }
 
+    public void remove(T element){
+        int index = this.get(element);
+        if(index > -1){
+            this.remove(index);
+        }
+    }
+
     public void remove(int index){
         if(!(index >= 0 && index < this.size)){
             throw new IllegalArgumentException("Invalid index");
