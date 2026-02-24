@@ -62,6 +62,15 @@ public class VetorList<T> {
         return get(element) > -1;
     }
 
+    public int lastIndexOf(T element){
+        for(int i = this.size - 1; i >= 0; i-- ){
+            if(this.elements[i].equals(element)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public void remove(int index){
         if(!(index >= 0 && index < this.size)){
             throw new IllegalArgumentException("Invalid index");
