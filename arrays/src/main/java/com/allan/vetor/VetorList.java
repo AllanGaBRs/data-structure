@@ -51,6 +51,17 @@ public class VetorList<T> {
         }
     }
 
+    public boolean contains(T element){
+        /*for(int i = 0; i < this.size; i++){
+            if(this.elements[i].equals(element)){
+                return true;
+            }
+        }
+        return false;*/
+
+        return get(element) > -1;
+    }
+
     public void remove(int index){
         if(!(index >= 0 && index < this.size)){
             throw new IllegalArgumentException("Invalid index");
